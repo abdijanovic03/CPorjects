@@ -84,3 +84,76 @@
         int broj1 = 42;
         float broj2 = 3.14;
 
+
+    pokazivac_na_broj++;
+
+
+
+    const int broj = 42;        // Deklaracija cijelobrojne konstante
+    const int oktalni_broj = 052;  // Oktalna reprezentacija
+    const int heks_broj = 0x2A;    // Heksadecimalna reprezentacija
+
+    const float pi = 3.14159;     // Deklaracija realne konstante
+    const float e = 2.71828e-5;   // Eksponencijalna reprezentacija
+
+
+    const char slovo = 'A';   // Deklaracija znakovne konstante
+
+
+    const char ime[] = "Programiranje";   // Deklaracija nizovne konstante
+
+    #define PI 3.14159    // Definisanje konstante korištenjem #define
+
+
+    int broj = 42;
+    int *pokazivac_na_broj = &broj;
+
+
+    int *pokazivac;
+
+
+    int x = 10;
+    int *p = &x; // Pokazivač p sada sadrži adresu promjenljive x
+
+    // Pristupanje vrijednosti putem pokazivača
+    printf("Vrednost x: %d\n", *p);
+
+
+    int *niz = (int *)malloc(5 * sizeof(int)); //rezerviše prostor za niz od pet cijelobrojnih vrijednosti.
+
+
+    int *niz = (int *)calloc(5, sizeof(int)); 
+    //rezerviše prostor za niz od pet cijelobrojnih vrijednosti i postavlja ih na nulu.
+
+
+    niz = (int *)realloc(niz, 10 * sizeof(int));
+    //Ovde se proširuje niz na deset elemenata.
+
+
+    	free(niz);
+  
+
+
+        #include <stdio.h>
+
+        int izvrsi_operaciju(int a, int b, int (*operacija)(int, int)) {
+            return operacija(a, b);
+        }
+
+        int sabiranje(int a, int b) {
+            return a + b;
+        }
+
+        int oduzimanje(int a, int b) {
+            return a - b;
+        }
+
+        int main() {
+            int rezultat_sabiranja = izvrsi_operaciju(4, 5, &sabiranje);
+            int rezultat_oduzimanja = izvrsi_operaciju(8, 3, &oduzimanje);
+
+            printf("Rezultat sabiranja: %d\n", rezultat_sabiranja);
+            printf("Rezultat oduzimanja: %d\n", rezultat_oduzimanja);
+
+            return 0;
+        }
