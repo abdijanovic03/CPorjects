@@ -7,29 +7,29 @@ int main() {
 
     // Unos prvog broja
 
-    // Provera da li je prvi uneti broj 0
+    // Provjera da li je prvi uneseni broj 0
     if (broj == 0) {
-        printf("Nema unetih brojeva.\n");
+        printf("Nema unesenih brojeva.\n");
         return 0;
     }
 
-    // Postavljanje inicijalnih vrednosti za minimum i maksimum
 
-    // Obrada unetih brojeva
+    // Obrada unijetih brojeva
     while (broj != 0) {
-        // Unos sledećeg broja
-        printf("Unesite sledeci broj (unesite 0 da biste zavrsili): ");
+        // Unos sljedeceg broja
+        printf("Unesite sljedeci broj (unesite 0 da biste zavrsili): ");
         scanf("%d", &broj);
-        if(broj==0)
-        break;
+
+        if(broj==0) break;
+
         brojac++;
-        if(brojac==1)
-        min = max = broj;
+        
+        if(brojac==1) min = max = broj;
         
         zbir += broj;
         proizvod *= broj;
 
-        // Provera minimuma i maksimuma
+        // Provjera minimuma i maksimuma
         if (broj < min) {
             min = broj;
         }
@@ -40,8 +40,8 @@ int main() {
         // Aritmeticka sredina
         aritmeticka_sredina = (double)zbir / brojac;
 
-        // Geometrijska sredina (koristimo logaritamski pristup)
-        geometrijska_sredina *= broj;
+        // Geometrijska sredina
+        geometrijska_sredina = broj;
 
         // Harmonijska sredina
         harmonijska_sredina += 1.0 / broj;
@@ -49,14 +49,14 @@ int main() {
     }
 
     // Ispis rezultata
-    printf("\nBroj unetih brojeva: %d\n", brojac);
-    printf("Zbir unetih brojeva: %d\n", zbir);
-    printf("Proizvod unetih brojeva: %d\n", proizvod);
-    printf("Minimum unetih brojeva: %d\n", min);
-    printf("Maksimum unetih brojeva: %d\n", max);
-    printf("Aritmeticka sredina unetih brojeva: %.2lf\n", aritmeticka_sredina);
-    printf("Geometrijska sredina unetih brojeva: %.2lf\n", pow(geometrijska_sredina, 1.0 / brojac));
-    printf("Harmonijska sredina unetih brojeva: %.2lf\n", brojac / harmonijska_sredina);
+    printf("\nBroj unesenih brojeva: %d\n", brojac);
+    printf("Zbir unesenih brojeva: %d\n", zbir);
+    printf("Proizvod unesenih brojeva: %d\n", proizvod);
+    printf("Minimum unesenih brojeva: %d\n", min);
+    printf("Maksimum unesenih brojeva: %d\n", max);
+    printf("Aritmeticka sredina unesenih brojeva: %.2lf\n", aritmeticka_sredina);
+    printf("Geometrijska sredina unesenih brojeva: %.2lf\n", pow(geometrijska_sredina, 1.0 / brojac));
+    printf("Harmonijska sredina unesenih brojeva: %.2lf\n", brojac / harmonijska_sredina);
 
     return 0;
 }
