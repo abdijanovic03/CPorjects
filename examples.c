@@ -1,5 +1,5 @@
 
-
+/*
         int a = 10, b = 5;
         int suma = a + b;      // Sabiranje
         int razlika = a - b;   // Oduzimanje
@@ -47,7 +47,7 @@
             float plata;
         };
 
-        #include <stdio.h>
+       // #include <stdio.h>
 
         // Definicija strukture
         struct Osoba {
@@ -116,7 +116,7 @@
     int *p = &x; // Pokazivač p sada sadrži adresu promjenljive x
 
     // Pristupanje vrijednosti putem pokazivača
-    printf("Vrednost x: %d\n", *p);
+    printf("Vrijednost x: %d\n", *p);
 
 
     int *niz = (int *)malloc(5 * sizeof(int)); //rezerviše prostor za niz od pet cijelobrojnih vrijednosti.
@@ -134,7 +134,7 @@
   
 
 
-        #include <stdio.h>
+       // #include <stdio.h>
 
         int izvrsi_operaciju(int a, int b, int (*operacija)(int, int)) {
             return operacija(a, b);
@@ -157,3 +157,4 @@
 
             return 0;
         }
+*/
