@@ -41,7 +41,7 @@ int main() {
         aritmeticka_sredina = (double)zbir / brojac;
 
         // Geometrijska sredina
-        geometrijska_sredina = broj;
+        geometrijska_sredina *= broj;
 
         // Harmonijska sredina
         harmonijska_sredina += 1.0 / broj;
