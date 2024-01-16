@@ -6,6 +6,8 @@ int main() {
     double aritmeticka_sredina, geometrijska_sredina = 1, harmonijska_sredina = 0;
 
     // Unos prvog broja
+    printf("Unesite sljedeci broj (unesite 0 da biste zavrsili): ");
+    scanf("%d", &broj);
 
     // Provjera da li je prvi uneseni broj 0
     if (broj == 0) {
@@ -13,16 +15,15 @@ int main() {
         return 0;
     }
 
-
     // Obrada unijetih brojeva
     while (broj != 0) {
         // Unos sljedeceg broja
         printf("Unesite sljedeci broj (unesite 0 da biste zavrsili): ");
         scanf("%d", &broj);
 
-        if(broj==0) break;
-
         brojac++;
+
+        if(broj==0) break;
         
         if(brojac==1) min = max = broj;
         
