@@ -5,28 +5,31 @@ int main() {
     int broj, brojac = 0, zbir = 0, proizvod = 1, min, max;
     double aritmeticka_sredina, geometrijska_sredina = 1, harmonijska_sredina = 0;
 
-    // Unos prvog broja
-    printf("Unesite sljedeci broj (unesite 0 da biste zavrsili): ");
-    scanf("%d", &broj);
+    // Otvori fajl za pisanje
+    FILE *file = fopen("rezultati.txt", "w");
 
-    // Provjera da li je prvi uneseni broj 0
-    if (broj == 0) {
-        printf("Nema unesenih brojeva.\n");
-        return 0;
+    // Provjera da li je otvaranje fajla uspjesno
+    if (file == NULL) {
+        printf("Nije moguce otvoriti fajl za pisanje.\n");
+        return 1;
     }
 
     // Obrada unijetih brojeva
-    while (broj != 0) {
+    do {
         // Unos sljedeceg broja
-        printf("Unesite sljedeci broj (unesite 0 da biste zavrsili): ");
+        printf("Unesite broj (unesite 0 da biste zavrsili): ");
         scanf("%d", &broj);
+
+        if (broj == 0) {
+            break; // Izlaz iz petlje ako je unesena 0
+        }
 
         brojac++;
 
-        if(broj==0) break;
-        
-        if(brojac==1) min = max = broj;
-        
+        if (brojac == 1) {
+            min = max = broj;
+        }
+
         zbir += broj;
         proizvod *= broj;
 
@@ -47,17 +50,24 @@ int main() {
         // Harmonijska sredina
         harmonijska_sredina += 1.0 / broj;
 
-    }
+    } while (broj != 0);
 
-    // Ispis rezultata
-    printf("\nBroj unesenih brojeva: %d\n", brojac);
-    printf("Zbir unesenih brojeva: %d\n", zbir);
-    printf("Proizvod unesenih brojeva: %d\n", proizvod);
-    printf("Minimum unesenih brojeva: %d\n", min);
-    printf("Maksimum unesenih brojeva: %d\n", max);
-    printf("Aritmeticka sredina unesenih brojeva: %.2lf\n", aritmeticka_sredina);
-    printf("Geometrijska sredina unesenih brojeva: %.2lf\n", pow(geometrijska_sredina, 1.0 / brojac));
-    printf("Harmonijska sredina unesenih brojeva: %.2lf\n", brojac / harmonijska_sredina);
+    // Ispis rezultata u fajl
+    fprintf(file, "Broj unesenih brojeva: %d\n", brojac);
+    fprintf(file, "Zbir unesenih brojeva: %d\n", zbir);
+    fprintf(file, "Proizvod unesenih brojeva: %d\n", proizvod);
+    fprintf(file, "Minimum unesenih brojeva: %d\n", min);
+    fprintf(file, "Maksimum unesenih brojeva: %d\n", max);
+    fprintf(file, "Aritmeticka sredina unesenih brojeva: %.2lf\n", aritmeticka_sredina);
+    fprintf(file, "Geometrijska sredina unesenih brojeva: %.2lf\n", pow(geometrijska_sredina, 1.0 / brojac));
+    fprintf(file, "Harmonijska sredina unesenih brojeva: %.2lf\n", brojac / harmonijska_sredina);
+    
+
+    // Zatvori fajl
+    fclose(file);
+
+    printf("Rezultati su zapisani u fajl 'rezultati.txt'.\n");
 
     return 0;
 }
+
