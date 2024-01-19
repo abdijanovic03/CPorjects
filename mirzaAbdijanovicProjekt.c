@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <math.h>
+#include <stdlib.h>
 
 int main() {
     int broj, brojac = 0, zbir = 0, proizvod = 1, min, max;
@@ -67,7 +68,7 @@ int main() {
     fclose(file);
 
     printf("Rezultati su zapisani u fajl 'rezultati.txt'.\n");
-
+	system("pause");
     return 0;
 }
 

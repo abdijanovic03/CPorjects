@@ -1,8 +1,8 @@
-Broj unesenih brojeva: 11
-Zbir unesenih brojeva: 115
-Proizvod unesenih brojeva: 686568960
+Broj unesenih brojeva: 6
+Zbir unesenih brojeva: 21
+Proizvod unesenih brojeva: 720
 Minimum unesenih brojeva: 1
-Maksimum unesenih brojeva: 43
-Aritmeticka sredina unesenih brojeva: 10.45
-Geometrijska sredina unesenih brojeva: 6.36
-Harmonijska sredina unesenih brojeva: 3.93
+Maksimum unesenih brojeva: 6
+Aritmeticka sredina unesenih brojeva: 3.50
+Geometrijska sredina unesenih brojeva: 2.99
+Harmonijska sredina unesenih brojeva: 2.45
